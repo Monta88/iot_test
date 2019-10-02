@@ -1,0 +1,129 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Transformation node hvac status",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 5,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 371,
+          "layoutY": 433
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsSwitchNode",
+        "name": "Switch to HVAC",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "function nextRelation(metadata, msg) {\n    return ['other'];\n}\nif(metadata.deviceName == 'iot1911_wacnet_1_43') {\n    return ['one'];\n}\nelse if (metadata.deviceName == 'iot1911_wacnet_1_44'){\n    return ['two'];}\n\nelse if ( metadata.deviceName =='iot1911_wacnet_1_5')\n    {\n        return ['three']\n    }\n    \nreturn nextRelation(metadata, msg)"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1123,
+          "layoutY": 430
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save in db",
+        "debugMode": false,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 699,
+          "layoutY": 551
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "device 1",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "if (msg.RunState == \"0\"){\n    \n    msg.RunState = 'Av';\n}\n\nelse\n   msg.RunState = 'På';\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 713,
+          "layoutY": 436
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "device 2",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "if (msg.RunState == \"0\"){\n    \n    msg.RunState = '(ukjent)';\n}\nelse if (msg.RunState ==\"1\")\n{\n    msg.RunState ='Komfort';\n}\n    else if (msg.RunState ==\"2\")\n{\n    msg.RunState ='Økonomi';\n}\nelse if (msg.RunState ==\"3\")\n{ \n    msg.RunState = 'Beskyttelse';\n}\nelse\n   msg.RunState = '(reservert)';\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 705,
+          "layoutY": 318
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "device 1",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "if (msg.RunState == \"0\"){\n    \n    msg.RunState = '(ukjent)';\n}\nelse if (msg.RunState ==\"1\")\n{\n    msg.RunState ='Komfort' ;\n}\n    else if (msg.RunState ==\"2\")\n{\n    msg.RunState ='Økonomi';\n}\nelse if (msg.RunState ==\"3\")\n{ \n    msg.RunState = 'Beskyttelse';\n}\nelse\n   msg.RunState = '(reservert)';\n  \n  \n \n   \nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 87,
+          "layoutY": 432
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbCheckMessageNode",
+        "name": "check filed",
+        "debugMode": false,
+        "configuration": {
+          "messageNames": [
+            "RunState"
+          ],
+          "metadataNames": [],
+          "checkAllKeys": true
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 2,
+        "type": "three"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 3,
+        "type": "two"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 4,
+        "type": "one"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 1,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 1,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 1,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 5,
+        "toIndex": 0,
+        "type": "True"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

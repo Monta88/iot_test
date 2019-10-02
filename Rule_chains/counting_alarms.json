@@ -1,0 +1,104 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Counting Alarms",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": null,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 317,
+          "layoutY": 304
+        },
+        "type": "org.thingsboard.rule.engine.analytics.latest.alarm.TbAlarmsCountNode",
+        "name": "Alarms counting",
+        "debugMode": false,
+        "configuration": {
+          "parentEntitiesQuery": {
+            "type": "relationsQuery",
+            "rootEntityId": {
+              "entityType": "ASSET",
+              "id": "39efd180-ca60-11e9-adb0-999291330ae2"
+            },
+            "relationsQuery": {
+              "direction": "FROM",
+              "maxLevel": 6,
+              "filters": [
+                {
+                  "relationType": "Contains",
+                  "entityTypes": [
+                    "ASSET",
+                    "DEVICE"
+                  ]
+                }
+              ]
+            },
+            "childRelationsQuery": {
+              "direction": "FROM",
+              "maxLevel": 5,
+              "filters": [
+                {
+                  "relationType": "Contains",
+                  "entityTypes": [
+                    "DEVICE",
+                    "ASSET"
+                  ]
+                }
+              ]
+            }
+          },
+          "periodTimeUnit": "MINUTES",
+          "periodValue": 1,
+          "countAlarmsForChildEntities": true,
+          "alarmsCountMappings": [
+            {
+              "target": "alarmsCount",
+              "typesList": [],
+              "severityList": [],
+              "statusList": [
+                "ACTIVE_UNACK",
+                "ACTIVE_ACK",
+                "CLEARED_UNACK",
+                "CLEARED_ACK"
+              ],
+              "latestInterval": 0
+            },
+            {
+              "latestInterval": 86400000,
+              "target": "alarmsCount",
+              "typesList": [],
+              "statusList": [
+                "ACTIVE_UNACK",
+                "ACTIVE_ACK"
+              ],
+              "severityList": [
+                "CRITICAL"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "connections": null,
+    "ruleChainConnections": [
+      {
+        "fromIndex": 0,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "4b605b20-a46c-11e9-adb0-999291330ae2"
+        },
+        "additionalInfo": {
+          "layoutX": 757,
+          "layoutY": 304,
+          "ruleChainNodeId": "rule-chain-node-3"
+        },
+        "type": "Success"
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": "Aggregate telemetry from smart meter to mains parent"
+    },
+    "name": "Aggregate to mains",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 2,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 940,
+          "layoutY": 387
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save in db",
+        "debugMode": false,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 561,
+          "layoutY": 245
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "To mains",
+        "debugMode": false,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "direction": "TO",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Contains",
+                "entityTypes": [
+                  "ASSET"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 258,
+          "layoutY": 385
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbCheckMessageNode",
+        "name": "check filed",
+        "debugMode": false,
+        "configuration": {
+          "messageNames": [
+            "active_power_pos"
+          ],
+          "metadataNames": [],
+          "checkAllKeys": true
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 1,
+        "toIndex": 0,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 0,
+        "type": "True"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 1,
+        "type": "True"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}
