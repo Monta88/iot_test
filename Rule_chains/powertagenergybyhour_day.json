@@ -1,0 +1,144 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "PowertagEnergyByHour/Day",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 4,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 1189,
+          "layoutY": 345
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save in db",
+        "debugMode": false,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 866,
+          "layoutY": 124
+        },
+        "type": "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode",
+        "name": "Daily energy import",
+        "debugMode": false,
+        "configuration": {
+          "parentEntitiesQuery": {
+            "type": "group",
+            "entityGroupId": null
+          },
+          "periodTimeUnit": "MINUTES",
+          "periodValue": 5,
+          "mathFunction": "SUM",
+          "aggIntervalTimeUnit": "DAYS",
+          "aggIntervalValue": 1,
+          "autoCreateIntervals": false,
+          "intervalPersistencePolicy": "ON_EACH_CHECK_AFTER_INTERVAL_END",
+          "intervalCheckTimeUnit": "MINUTES",
+          "intervalCheckValue": 1,
+          "intervalTtlTimeUnit": "DAYS",
+          "intervalTtlValue": 1,
+          "inputValueKey": "HourlyEnergy",
+          "outputValueKey": "DailyEnergy",
+          "statePersistencePolicy": "ON_EACH_CHANGE",
+          "statePersistenceTimeUnit": "HOURS",
+          "statePersistenceValue": 1
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 764,
+          "layoutY": 345
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "Hourly Energy import",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "\n/*msg.HourlyEnergy = parseFloat(msg.total_active_energy) - parseFloat(JSON.parse(metadata.total_active_energy));*/\n\nmsg.HourlyEnergy = Math.abs(parseFloat(msg.total_active_energy) - parseFloat(JSON.parse(metadata.total_active_energy)));\n\nreturn {msg: msg, metadata: metadata, msgType: msgType}; "
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 389,
+          "layoutY": 340
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetTelemetryNode",
+        "name": "Add previouss active_energy_import to metadata",
+        "debugMode": false,
+        "configuration": {
+          "startInterval": 24,
+          "endInterval": 1,
+          "startIntervalPattern": "",
+          "endIntervalPattern": "",
+          "useMetadataIntervalPatterns": false,
+          "startIntervalTimeUnit": "HOURS",
+          "endIntervalTimeUnit": "HOURS",
+          "fetchMode": "LAST",
+          "orderBy": "ASC",
+          "latestTsKeyNames": [
+            "total_active_energy"
+          ]
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 99,
+          "layoutY": 341
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbCheckMessageNode",
+        "name": "check",
+        "debugMode": false,
+        "configuration": {
+          "messageNames": [
+            "total_active_energy"
+          ],
+          "metadataNames": [],
+          "checkAllKeys": true
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1182,
+          "layoutY": 225
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save in db",
+        "debugMode": false,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 1,
+        "toIndex": 5,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 0,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 3,
+        "type": "True"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

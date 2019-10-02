@@ -1,0 +1,149 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "SmartmeterEnergyByHour/Day",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 5,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 1268,
+          "layoutY": 222
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save in db",
+        "debugMode": false,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1004,
+          "layoutY": 223
+        },
+        "type": "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode",
+        "name": "Daily energy import",
+        "debugMode": false,
+        "configuration": {
+          "parentEntitiesQuery": {
+            "type": "group",
+            "entityGroupId": null
+          },
+          "periodTimeUnit": "MINUTES",
+          "periodValue": 5,
+          "mathFunction": "SUM",
+          "aggIntervalTimeUnit": "HOURS",
+          "aggIntervalValue": 1,
+          "autoCreateIntervals": false,
+          "intervalPersistencePolicy": "ON_EACH_CHECK_AFTER_INTERVAL_END",
+          "intervalCheckTimeUnit": "HOURS",
+          "intervalCheckValue": 1,
+          "intervalTtlTimeUnit": "DAYS",
+          "intervalTtlValue": 1,
+          "inputValueKey": "hourlyEnergyImportMeter",
+          "outputValueKey": "DailyMeterEnergiImport",
+          "statePersistencePolicy": "ON_EACH_CHANGE",
+          "statePersistenceTimeUnit": "HOURS",
+          "statePersistenceValue": 1
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1196,
+          "layoutY": 447
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save in db",
+        "debugMode": false,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 889,
+          "layoutY": 448
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "HourlyEnergyImport",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "if(metadata.hasOwnProperty(\"active_energy_import\")){\nmsg.hourlyEnergyImportMeter = Math.abs(parseFloat(msg.active_energy_import) - parseFloat(JSON.parse(metadata.active_energy_import)));}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 537,
+          "layoutY": 446
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetTelemetryNode",
+        "name": "Add data to metadata",
+        "debugMode": false,
+        "configuration": {
+          "startInterval": 2,
+          "endInterval": 1,
+          "startIntervalPattern": "",
+          "endIntervalPattern": "",
+          "useMetadataIntervalPatterns": false,
+          "startIntervalTimeUnit": "MINUTES",
+          "endIntervalTimeUnit": "MINUTES",
+          "fetchMode": "LAST",
+          "orderBy": "ASC",
+          "latestTsKeyNames": [
+            "active_energy_import"
+          ]
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 221,
+          "layoutY": 448
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbCheckMessageNode",
+        "name": "check filed",
+        "debugMode": false,
+        "configuration": {
+          "messageNames": [
+            "active_energy_import"
+          ],
+          "metadataNames": [],
+          "checkAllKeys": true
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 1,
+        "toIndex": 0,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 1,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 3,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 5,
+        "toIndex": 4,
+        "type": "True"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

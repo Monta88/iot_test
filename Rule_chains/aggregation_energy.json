@@ -1,0 +1,384 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": "for visualize the logic of the aggregation function"
+    },
+    "name": "Aggregation Energy",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 6,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 841,
+          "layoutY": 538
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "To mains",
+        "debugMode": false,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "direction": "TO",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Contains",
+                "entityTypes": [
+                  "ASSET"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1109,
+          "layoutY": 550
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "To building",
+        "debugMode": false,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "direction": "TO",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Contains",
+                "entityTypes": [
+                  "ASSET"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 578,
+          "layoutY": 528
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "To meter",
+        "debugMode": false,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "direction": "TO",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Contains",
+                "entityTypes": [
+                  "DEVICE"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1173,
+          "layoutY": 843
+        },
+        "type": "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode",
+        "name": "sumenergy",
+        "debugMode": false,
+        "configuration": {
+          "parentEntitiesQuery": {
+            "type": "group",
+            "entityGroupId": null
+          },
+          "periodTimeUnit": "MINUTES",
+          "periodValue": 5,
+          "mathFunction": "SUM",
+          "aggIntervalTimeUnit": "SECONDS",
+          "aggIntervalValue": 5,
+          "autoCreateIntervals": false,
+          "intervalPersistencePolicy": "ON_EACH_CHECK_AFTER_INTERVAL_END",
+          "intervalCheckTimeUnit": "SECONDS",
+          "intervalCheckValue": 5,
+          "intervalTtlTimeUnit": "SECONDS",
+          "intervalTtlValue": 5,
+          "inputValueKey": "total_active_energy",
+          "outputValueKey": "EnergyComsuption",
+          "statePersistencePolicy": "ON_EACH_CHANGE",
+          "statePersistenceTimeUnit": "MINUTES",
+          "statePersistenceValue": 1
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 419,
+          "layoutY": 623
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "To groups",
+        "debugMode": false,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "direction": "TO",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Contains",
+                "entityTypes": [
+                  "ASSET"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 303,
+          "layoutY": 738
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "To circuit",
+        "debugMode": false,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "direction": "TO",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Contains",
+                "entityTypes": [
+                  "ASSET"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 203,
+          "layoutY": 847
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbCheckMessageNode",
+        "name": "check filed",
+        "debugMode": false,
+        "configuration": {
+          "messageNames": [
+            "total_active_energy"
+          ],
+          "metadataNames": [],
+          "checkAllKeys": true
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1364,
+          "layoutY": 416
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save to db",
+        "debugMode": false,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1119,
+          "layoutY": 416
+        },
+        "type": "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode",
+        "name": "sumenergy",
+        "debugMode": false,
+        "configuration": {
+          "parentEntitiesQuery": {
+            "type": "group",
+            "entityGroupId": null
+          },
+          "periodTimeUnit": "MINUTES",
+          "periodValue": 5,
+          "mathFunction": "SUM",
+          "aggIntervalTimeUnit": "SECONDS",
+          "aggIntervalValue": 5,
+          "autoCreateIntervals": false,
+          "intervalPersistencePolicy": "ON_EACH_CHECK_AFTER_INTERVAL_END",
+          "intervalCheckTimeUnit": "SECONDS",
+          "intervalCheckValue": 1,
+          "intervalTtlTimeUnit": "SECONDS",
+          "intervalTtlValue": 1,
+          "inputValueKey": "total_active_energy",
+          "outputValueKey": "EnergyComsuptionSum",
+          "statePersistencePolicy": "ON_EACH_CHANGE",
+          "statePersistenceTimeUnit": "MINUTES",
+          "statePersistenceValue": 1
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1009,
+          "layoutY": 123
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "To building",
+        "debugMode": false,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "direction": "TO",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Contains",
+                "entityTypes": [
+                  "ASSET"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 776,
+          "layoutY": 242
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "To mains",
+        "debugMode": false,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "direction": "TO",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Contains",
+                "entityTypes": [
+                  "ASSET"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 283,
+          "layoutY": 420
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbCheckMessageNode",
+        "name": "check filed",
+        "debugMode": false,
+        "configuration": {
+          "messageNames": [
+            "total_active_energy"
+          ],
+          "metadataNames": [],
+          "checkAllKeys": true
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 3,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 3,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 0,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 3,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 7,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 3,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 5,
+        "toIndex": 3,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 5,
+        "toIndex": 4,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 6,
+        "toIndex": 3,
+        "type": "True"
+      },
+      {
+        "fromIndex": 6,
+        "toIndex": 5,
+        "type": "True"
+      },
+      {
+        "fromIndex": 8,
+        "toIndex": 7,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 9,
+        "toIndex": 8,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 10,
+        "toIndex": 8,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 10,
+        "toIndex": 9,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 11,
+        "toIndex": 8,
+        "type": "True"
+      },
+      {
+        "fromIndex": 11,
+        "toIndex": 10,
+        "type": "True"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}
