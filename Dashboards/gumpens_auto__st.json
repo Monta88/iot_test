@@ -1,5 +1,5 @@
 {
-  "title": "Gumpen Gruppen",
+  "title": "Gumpens Auto Øst",
   "configuration": {
     "widgets": {
       "7771723d-44eb-d87b-55fd-9fd08c236d37": {
@@ -379,7 +379,7 @@
                   "postFuncBody": "return value/1000;"
                 }
               ],
-              "entityAliasId": "6c00970a-49b9-e1e8-961d-7d109c52f055"
+              "entityAliasId": "568df355-dae5-3230-badd-b7ddfc1dc7f6"
             }
           ],
           "enableDataExport": false,
@@ -674,7 +674,7 @@
                   "decimals": 1
                 }
               ],
-              "entityAliasId": "70957a75-ca2f-efe8-8354-f7db71421608"
+              "entityAliasId": "fc94bc71-6db6-1b85-cb3b-dc254da75e73"
             }
           ],
           "timewindow": {
@@ -1005,7 +1005,7 @@
                   "_hash": 0.037428452877554585
                 }
               ],
-              "entityAliasId": "70957a75-ca2f-efe8-8354-f7db71421608"
+              "entityAliasId": "fc94bc71-6db6-1b85-cb3b-dc254da75e73"
             }
           ],
           "timewindow": {
@@ -1063,7 +1063,7 @@
                   "_hash": 0.037428452877554585
                 }
               ],
-              "entityAliasId": "70957a75-ca2f-efe8-8354-f7db71421608"
+              "entityAliasId": "fc94bc71-6db6-1b85-cb3b-dc254da75e73"
             }
           ],
           "timewindow": {
@@ -1121,7 +1121,7 @@
                   "_hash": 0.8322659160191346
                 }
               ],
-              "entityAliasId": "70957a75-ca2f-efe8-8354-f7db71421608"
+              "entityAliasId": "fc94bc71-6db6-1b85-cb3b-dc254da75e73"
             }
           ],
           "timewindow": {
@@ -1220,7 +1220,7 @@
                   "_hash": 0.7479328510643153
                 }
               ],
-              "entityAliasId": "70957a75-ca2f-efe8-8354-f7db71421608"
+              "entityAliasId": "fc94bc71-6db6-1b85-cb3b-dc254da75e73"
             }
           ],
           "timewindow": {
@@ -1320,7 +1320,7 @@
                   "_hash": 0.6740905530360948
                 }
               ],
-              "entityAliasId": "70957a75-ca2f-efe8-8354-f7db71421608"
+              "entityAliasId": "fc94bc71-6db6-1b85-cb3b-dc254da75e73"
             }
           ],
           "timewindow": {
@@ -1422,7 +1422,7 @@
                   "_hash": 0.1665311377055907
                 }
               ],
-              "entityAliasId": "70957a75-ca2f-efe8-8354-f7db71421608"
+              "entityAliasId": "fc94bc71-6db6-1b85-cb3b-dc254da75e73"
             }
           ],
           "timewindow": {
@@ -1522,7 +1522,7 @@
                   "_hash": 0.6309561071291279
                 }
               ],
-              "entityAliasId": "70957a75-ca2f-efe8-8354-f7db71421608"
+              "entityAliasId": "fc94bc71-6db6-1b85-cb3b-dc254da75e73"
             }
           ],
           "timewindow": {
@@ -1622,7 +1622,7 @@
                   "_hash": 0.0841103975840447
                 }
               ],
-              "entityAliasId": "70957a75-ca2f-efe8-8354-f7db71421608"
+              "entityAliasId": "fc94bc71-6db6-1b85-cb3b-dc254da75e73"
             }
           ],
           "timewindow": {
@@ -1715,13 +1715,13 @@
                   "_hash": 0.9490210352185713
                 }
               ],
-              "entityAliasId": "70957a75-ca2f-efe8-8354-f7db71421608"
+              "entityAliasId": "fc94bc71-6db6-1b85-cb3b-dc254da75e73"
             }
           ],
           "timewindow": {
             "realtime": {
-              "interval": 120000,
-              "timewindowMs": 43200000
+              "interval": 300000,
+              "timewindowMs": 86400000
             },
             "aggregation": {
               "type": "AVG",
@@ -1828,13 +1828,13 @@
                   "_hash": 0.41991806338625826
                 }
               ],
-              "entityAliasId": "70957a75-ca2f-efe8-8354-f7db71421608"
+              "entityAliasId": "fc94bc71-6db6-1b85-cb3b-dc254da75e73"
             }
           ],
           "timewindow": {
             "realtime": {
               "interval": 300000,
-              "timewindowMs": 43200000
+              "timewindowMs": 86400000
             },
             "aggregation": {
               "type": "AVG",
@@ -2032,7 +2032,7 @@
                   "postFuncBody": "return value/1000;"
                 }
               ],
-              "entityAliasId": "a346f003-be24-21ec-dabc-e6d5d5dfca5a"
+              "entityAliasId": "568df355-dae5-3230-badd-b7ddfc1dc7f6"
             }
           ],
           "timewindow": {
@@ -2131,7 +2131,7 @@
                   "postFuncBody": "return value/1000;"
                 }
               ],
-              "entityAliasId": "a346f003-be24-21ec-dabc-e6d5d5dfca5a"
+              "entityAliasId": "568df355-dae5-3230-badd-b7ddfc1dc7f6"
             }
           ],
           "timewindow": {
@@ -2254,7 +2254,7 @@
                   "postFuncBody": "return value/1000;"
                 }
               ],
-              "entityAliasId": "a346f003-be24-21ec-dabc-e6d5d5dfca5a"
+              "entityAliasId": "568df355-dae5-3230-badd-b7ddfc1dc7f6"
             }
           ],
           "timewindow": {
@@ -2353,7 +2353,7 @@
                   "postFuncBody": "return value/1000;"
                 }
               ],
-              "entityAliasId": "a346f003-be24-21ec-dabc-e6d5d5dfca5a"
+              "entityAliasId": "568df355-dae5-3230-badd-b7ddfc1dc7f6"
             }
           ],
           "timewindow": {
@@ -4716,7 +4716,7 @@
               "limit": 25000
             }
           },
-          "showTitle": true,
+          "showTitle": false,
           "backgroundColor": "#fff",
           "color": "rgba(0, 0, 0, 0.87)",
           "padding": "8px",
@@ -4742,7 +4742,7 @@
             "stack": false,
             "tooltipIndividual": false
           },
-          "title": "Effekt",
+          "title": "New Timeseries - Flot",
           "dropShadow": true,
           "enableFullscreen": false,
           "titleStyle": {
@@ -4757,7 +4757,7 @@
           },
           "useDashboardTimewindow": false,
           "displayTimewindow": true,
-          "showLegend": false,
+          "showLegend": true,
           "actions": {},
           "units": "kW"
         },
@@ -4786,7 +4786,7 @@
                   "postFuncBody": "return value/1000;"
                 }
               ],
-              "entityAliasId": "a346f003-be24-21ec-dabc-e6d5d5dfca5a"
+              "entityAliasId": "568df355-dae5-3230-badd-b7ddfc1dc7f6"
             }
           ],
           "timewindow": {
@@ -7079,7 +7079,7 @@
                   "postFuncBody": "return value/1000;"
                 }
               ],
-              "entityAliasId": "a346f003-be24-21ec-dabc-e6d5d5dfca5a"
+              "entityAliasId": "568df355-dae5-3230-badd-b7ddfc1dc7f6"
             }
           ],
           "timewindow": {
@@ -8105,6 +8105,186 @@
           "units": "V"
         },
         "id": "f7fb0366-07fe-2705-a0f7-c6e29409aec5"
+      },
+      "9e48062c-504f-e353-4c04-43e97c2c3ea3": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "timeseries_bars_flot",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "hourlyEnergyImportMeter",
+                  "type": "timeseries",
+                  "label": "Energi per time",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": false,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.5026806279134057,
+                  "units": "kWh",
+                  "postFuncBody": "return value/1000;"
+                }
+              ],
+              "entityAliasId": "568df355-dae5-3230-badd-b7ddfc1dc7f6"
+            }
+          ],
+          "timewindow": {
+            "history": {
+              "interval": 3600000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 200
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": true,
+            "tooltipIndividual": false,
+            "defaultBarWidth": 600
+          },
+          "title": "New Timeseries Bars - Flot",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {
+            "background-image": "url(https://thingsboard.io/images/dashboards/districts/districts-bg.jpg)",
+            "background-size": "cover"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "enableDataExport": false,
+          "displayTimewindow": true
+        },
+        "id": "9e48062c-504f-e353-4c04-43e97c2c3ea3"
+      },
+      "31e8fc99-a9ef-0309-b4ba-a92ceb399891": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "timeseries_bars_flot",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "DailyMeterEnergiImport",
+                  "type": "timeseries",
+                  "label": "Energi per dag",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": false,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.9516964651538373,
+                  "units": "kWh",
+                  "postFuncBody": "return value/1000;"
+                }
+              ],
+              "entityAliasId": "568df355-dae5-3230-badd-b7ddfc1dc7f6"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "interval": 86400000,
+              "timewindowMs": 2592000000
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 200
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": true,
+            "tooltipIndividual": false,
+            "defaultBarWidth": 600
+          },
+          "title": "New Timeseries Bars - Flot",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {
+            "background-image": "url(https://thingsboard.io/images/dashboards/districts/districts-bg.jpg)",
+            "background-size": "cover"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "enableDataExport": false,
+          "displayTimewindow": true
+        },
+        "id": "31e8fc99-a9ef-0309-b4ba-a92ceb399891"
       },
       "24dbec31-2cc9-8dca-cecd-08907b795fcc": {
         "isSystemType": true,
@@ -9999,7 +10179,8 @@
             "animationDuration": 500,
             "animationRule": "cycle",
             "defaultColor": "#ee5d0c",
-            "minValue": 0
+            "minValue": 0,
+            "deleteOnExit": false
           },
           "title": "New Radial gauge - diff",
           "dropShadow": true,
@@ -10020,7 +10201,7 @@
         },
         "id": "a3b48fbd-f331-ae60-639a-4068c80f6c99"
       },
-      "7ce7036c-80c5-e55f-bc02-75d821c63cea": {
+      "42b30a92-6af5-37e4-1dc6-e7bd18e8dac8": {
         "isSystemType": false,
         "bundleAlias": "iotsolution_custom_widgets",
         "typeAlias": "delta_timeseries_v3",
@@ -10106,25 +10287,25 @@
           "actions": {},
           "decimals": 2
         },
-        "id": "7ce7036c-80c5-e55f-bc02-75d821c63cea"
+        "id": "42b30a92-6af5-37e4-1dc6-e7bd18e8dac8"
       },
-      "29cd4e84-44b4-f55c-a0e0-4c2fe25ce92d": {
-        "isSystemType": true,
-        "bundleAlias": "charts",
-        "typeAlias": "timeseries_bars_flot",
+      "03979a81-5c5f-a235-0abb-cc9333701504": {
+        "isSystemType": false,
+        "bundleAlias": "iotsolution_custom_widgets",
+        "typeAlias": "delta_timeseries_v3",
         "type": "timeseries",
         "title": "New widget",
         "sizeX": 12,
-        "sizeY": 4,
+        "sizeY": 5,
         "config": {
           "datasources": [
             {
               "type": "entity",
               "dataKeys": [
                 {
-                  "name": "active_energy_import",
+                  "name": "total_active_energy",
                   "type": "timeseries",
-                  "label": "active_energy_import",
+                  "label": "Energi per time",
                   "color": "#2196f3",
                   "settings": {
                     "showLines": false,
@@ -10133,22 +10314,22 @@
                     "showSeparateAxis": false,
                     "axisPosition": "left"
                   },
-                  "_hash": 0.5808960884907499,
+                  "_hash": 0.06921870879393377,
                   "units": "kWh",
                   "postFuncBody": "return value/1000;"
                 }
               ],
-              "entityAliasId": "568df355-dae5-3230-badd-b7ddfc1dc7f6"
+              "entityAliasId": "cff608ca-31ea-23f4-a36a-dae9e7565bda"
             }
           ],
           "timewindow": {
-            "history": {
+            "realtime": {
               "interval": 3600000,
               "timewindowMs": 86400000
             },
             "aggregation": {
               "type": "AVG",
-              "limit": 200
+              "limit": 25000
             }
           },
           "showTitle": true,
@@ -10159,23 +10340,20 @@
             "shadowSize": 4,
             "fontColor": "#545454",
             "fontSize": 10,
-            "xaxis": {
-              "showLabels": true,
-              "color": "#545454"
-            },
-            "yaxis": {
-              "showLabels": true,
-              "color": "#545454"
-            },
             "grid": {
               "color": "#545454",
               "tickColor": "#DDDDDD",
+              "outlineWidth": 1,
               "verticalLines": true,
-              "horizontalLines": true,
-              "outlineWidth": 1
+              "horizontalLines": true
+            },
+            "xaxis": {
+              "showLabels": true
+            },
+            "yaxis": {
+              "showLabels": true
             },
             "stack": true,
-            "tooltipIndividual": false,
             "defaultBarWidth": 600
           },
           "title": "Energi per time",
@@ -10186,35 +10364,36 @@
             "fontWeight": 400
           },
           "mobileHeight": null,
+          "enableDataExport": false,
           "widgetStyle": {
             "background-image": "url(https://thingsboard.io/images/dashboards/districts/districts-bg.jpg)",
             "background-size": "cover"
           },
           "useDashboardTimewindow": false,
+          "displayTimewindow": true,
           "showLegend": false,
           "actions": {},
-          "enableDataExport": false,
-          "displayTimewindow": true
+          "decimals": 2
         },
-        "id": "29cd4e84-44b4-f55c-a0e0-4c2fe25ce92d"
+        "id": "03979a81-5c5f-a235-0abb-cc9333701504"
       },
-      "80cebbe0-f088-34ee-dcf6-253ec323dc91": {
-        "isSystemType": true,
-        "bundleAlias": "charts",
-        "typeAlias": "timeseries_bars_flot",
+      "e79c0ee5-8974-5b94-ec3e-2130bbde4338": {
+        "isSystemType": false,
+        "bundleAlias": "iotsolution_custom_widgets",
+        "typeAlias": "delta_timeseries_v3",
         "type": "timeseries",
         "title": "New widget",
         "sizeX": 12,
-        "sizeY": 4,
+        "sizeY": 5,
         "config": {
           "datasources": [
             {
               "type": "entity",
               "dataKeys": [
                 {
-                  "name": "active_energy_import",
+                  "name": "total_active_energy",
                   "type": "timeseries",
-                  "label": "active_energy_import",
+                  "label": "Energi per time",
                   "color": "#2196f3",
                   "settings": {
                     "showLines": false,
@@ -10223,22 +10402,22 @@
                     "showSeparateAxis": false,
                     "axisPosition": "left"
                   },
-                  "_hash": 0.5808960884907499,
+                  "_hash": 0.06921870879393377,
                   "units": "kWh",
                   "postFuncBody": "return value/1000;"
                 }
               ],
-              "entityAliasId": "568df355-dae5-3230-badd-b7ddfc1dc7f6"
+              "entityAliasId": "cff608ca-31ea-23f4-a36a-dae9e7565bda"
             }
           ],
           "timewindow": {
             "realtime": {
-              "interval": 86400000,
-              "timewindowMs": 2592000000
+              "interval": 3600000,
+              "timewindowMs": 86400000
             },
             "aggregation": {
               "type": "AVG",
-              "limit": 200
+              "limit": 25000
             }
           },
           "showTitle": true,
@@ -10249,26 +10428,23 @@
             "shadowSize": 4,
             "fontColor": "#545454",
             "fontSize": 10,
-            "xaxis": {
-              "showLabels": true,
-              "color": "#545454"
-            },
-            "yaxis": {
-              "showLabels": true,
-              "color": "#545454"
-            },
             "grid": {
               "color": "#545454",
               "tickColor": "#DDDDDD",
+              "outlineWidth": 1,
               "verticalLines": true,
-              "horizontalLines": true,
-              "outlineWidth": 1
+              "horizontalLines": true
+            },
+            "xaxis": {
+              "showLabels": true
+            },
+            "yaxis": {
+              "showLabels": true
             },
             "stack": true,
-            "tooltipIndividual": false,
             "defaultBarWidth": 600
           },
-          "title": "Energi per dag",
+          "title": "Energi per time",
           "dropShadow": true,
           "enableFullscreen": false,
           "titleStyle": {
@@ -10276,19 +10452,20 @@
             "fontWeight": 400
           },
           "mobileHeight": null,
+          "enableDataExport": false,
           "widgetStyle": {
             "background-image": "url(https://thingsboard.io/images/dashboards/districts/districts-bg.jpg)",
             "background-size": "cover"
           },
           "useDashboardTimewindow": false,
+          "displayTimewindow": true,
           "showLegend": false,
           "actions": {},
-          "enableDataExport": false,
-          "displayTimewindow": true
+          "decimals": 2
         },
-        "id": "80cebbe0-f088-34ee-dcf6-253ec323dc91"
+        "id": "e79c0ee5-8974-5b94-ec3e-2130bbde4338"
       },
-      "e75b12bf-8340-d2f4-49c1-48023b92f252": {
+      "9de013f1-0e7b-20cd-d793-929da5196ce4": {
         "isSystemType": false,
         "bundleAlias": "iotsolution_custom_widgets",
         "typeAlias": "delta_timeseries_v3",
@@ -10374,189 +10551,13 @@
           "actions": {},
           "decimals": 2
         },
-        "id": "e75b12bf-8340-d2f4-49c1-48023b92f252"
-      },
-      "fd05bdf5-db43-e631-2fb2-437101a12c0a": {
-        "isSystemType": false,
-        "bundleAlias": "iotsolution_custom_widgets",
-        "typeAlias": "delta_timeseries_v3",
-        "type": "timeseries",
-        "title": "New widget",
-        "sizeX": 12,
-        "sizeY": 5,
-        "config": {
-          "datasources": [
-            {
-              "type": "entity",
-              "dataKeys": [
-                {
-                  "name": "total_active_energy",
-                  "type": "timeseries",
-                  "label": "Energi per time",
-                  "color": "#2196f3",
-                  "settings": {
-                    "showLines": false,
-                    "fillLines": false,
-                    "showPoints": false,
-                    "showSeparateAxis": false,
-                    "axisPosition": "left"
-                  },
-                  "_hash": 0.06921870879393377,
-                  "units": "kWh",
-                  "postFuncBody": "return value/1000;"
-                }
-              ],
-              "entityAliasId": "cff608ca-31ea-23f4-a36a-dae9e7565bda"
-            }
-          ],
-          "timewindow": {
-            "realtime": {
-              "interval": 3600000,
-              "timewindowMs": 86400000
-            },
-            "aggregation": {
-              "type": "AVG",
-              "limit": 25000
-            }
-          },
-          "showTitle": true,
-          "backgroundColor": "#fff",
-          "color": "rgba(0, 0, 0, 0.87)",
-          "padding": "8px",
-          "settings": {
-            "shadowSize": 4,
-            "fontColor": "#545454",
-            "fontSize": 10,
-            "grid": {
-              "color": "#545454",
-              "tickColor": "#DDDDDD",
-              "outlineWidth": 1,
-              "verticalLines": true,
-              "horizontalLines": true
-            },
-            "xaxis": {
-              "showLabels": true
-            },
-            "yaxis": {
-              "showLabels": true
-            },
-            "stack": true,
-            "defaultBarWidth": 600
-          },
-          "title": "Energi per time",
-          "dropShadow": true,
-          "enableFullscreen": false,
-          "titleStyle": {
-            "fontSize": "16px",
-            "fontWeight": 400
-          },
-          "mobileHeight": null,
-          "enableDataExport": false,
-          "widgetStyle": {
-            "background-image": "url(https://thingsboard.io/images/dashboards/districts/districts-bg.jpg)",
-            "background-size": "cover"
-          },
-          "useDashboardTimewindow": false,
-          "displayTimewindow": true,
-          "showLegend": false,
-          "actions": {},
-          "decimals": 2
-        },
-        "id": "fd05bdf5-db43-e631-2fb2-437101a12c0a"
-      },
-      "7a47b15f-9fc2-cb8b-2bda-6956e6921fae": {
-        "isSystemType": false,
-        "bundleAlias": "iotsolution_custom_widgets",
-        "typeAlias": "delta_timeseries_v3",
-        "type": "timeseries",
-        "title": "New widget",
-        "sizeX": 12,
-        "sizeY": 5,
-        "config": {
-          "datasources": [
-            {
-              "type": "entity",
-              "dataKeys": [
-                {
-                  "name": "total_active_energy",
-                  "type": "timeseries",
-                  "label": "Energi per time",
-                  "color": "#2196f3",
-                  "settings": {
-                    "showLines": false,
-                    "fillLines": false,
-                    "showPoints": false,
-                    "showSeparateAxis": false,
-                    "axisPosition": "left"
-                  },
-                  "_hash": 0.06921870879393377,
-                  "units": "kWh",
-                  "postFuncBody": "return value/1000;"
-                }
-              ],
-              "entityAliasId": "cff608ca-31ea-23f4-a36a-dae9e7565bda"
-            }
-          ],
-          "timewindow": {
-            "realtime": {
-              "interval": 3600000,
-              "timewindowMs": 86400000
-            },
-            "aggregation": {
-              "type": "AVG",
-              "limit": 25000
-            }
-          },
-          "showTitle": true,
-          "backgroundColor": "#fff",
-          "color": "rgba(0, 0, 0, 0.87)",
-          "padding": "8px",
-          "settings": {
-            "shadowSize": 4,
-            "fontColor": "#545454",
-            "fontSize": 10,
-            "grid": {
-              "color": "#545454",
-              "tickColor": "#DDDDDD",
-              "outlineWidth": 1,
-              "verticalLines": true,
-              "horizontalLines": true
-            },
-            "xaxis": {
-              "showLabels": true
-            },
-            "yaxis": {
-              "showLabels": true
-            },
-            "stack": true,
-            "defaultBarWidth": 600
-          },
-          "title": "Energi per time",
-          "dropShadow": true,
-          "enableFullscreen": false,
-          "titleStyle": {
-            "fontSize": "16px",
-            "fontWeight": 400
-          },
-          "mobileHeight": null,
-          "enableDataExport": false,
-          "widgetStyle": {
-            "background-image": "url(https://thingsboard.io/images/dashboards/districts/districts-bg.jpg)",
-            "background-size": "cover"
-          },
-          "useDashboardTimewindow": false,
-          "displayTimewindow": true,
-          "showLegend": false,
-          "actions": {},
-          "decimals": 2
-        },
-        "id": "7a47b15f-9fc2-cb8b-2bda-6956e6921fae"
+        "id": "9de013f1-0e7b-20cd-d793-929da5196ce4"
       }
     },
     "states": {
       "default": {
         "name": "Gumpen Gruppen",
-        "root": true,
+        "root": false,
         "layouts": {
           "main": {
             "widgets": {
@@ -10593,8 +10594,8 @@
         }
       },
       "Building_state": {
-        "name": "${entityName}",
-        "root": false,
+        "name": "Gumpens Auto Øst",
+        "root": true,
         "layouts": {
           "main": {
             "widgets": {
@@ -11041,18 +11042,18 @@
                 "row": 2,
                 "col": 12
               },
-              "e75b12bf-8340-d2f4-49c1-48023b92f252": {
-                "sizeX": 24,
-                "sizeY": 4,
-                "mobileHeight": null,
-                "row": 7,
-                "col": 0
-              },
-              "fd05bdf5-db43-e631-2fb2-437101a12c0a": {
+              "e79c0ee5-8974-5b94-ec3e-2130bbde4338": {
                 "sizeX": 12,
                 "sizeY": 5,
                 "mobileHeight": null,
                 "row": 2,
+                "col": 0
+              },
+              "9de013f1-0e7b-20cd-d793-929da5196ce4": {
+                "sizeX": 24,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 7,
                 "col": 0
               }
             },
@@ -11319,14 +11320,14 @@
                 "row": 18,
                 "col": 16
               },
-              "29cd4e84-44b4-f55c-a0e0-4c2fe25ce92d": {
+              "9e48062c-504f-e353-4c04-43e97c2c3ea3": {
                 "sizeX": 12,
                 "sizeY": 4,
                 "mobileHeight": null,
                 "row": 6,
                 "col": 0
               },
-              "80cebbe0-f088-34ee-dcf6-253ec323dc91": {
+              "31e8fc99-a9ef-0309-b4ba-a92ceb399891": {
                 "sizeX": 12,
                 "sizeY": 4,
                 "mobileHeight": null,
@@ -11521,14 +11522,14 @@
                 "row": 14,
                 "col": 12
               },
-              "7ce7036c-80c5-e55f-bc02-75d821c63cea": {
+              "42b30a92-6af5-37e4-1dc6-e7bd18e8dac8": {
                 "sizeX": 24,
                 "sizeY": 4,
                 "mobileHeight": null,
                 "row": 7,
                 "col": 0
               },
-              "7a47b15f-9fc2-cb8b-2bda-6956e6921fae": {
+              "03979a81-5c5f-a235-0abb-cc9333701504": {
                 "sizeX": 12,
                 "sizeY": 5,
                 "mobileHeight": null,
@@ -11604,17 +11605,13 @@
         "id": "300c98c6-7509-33fc-3054-86a80d0382ac",
         "alias": "Select ventilation",
         "filter": {
-          "type": "deviceSearchQuery",
+          "type": "entityList",
           "resolveMultiple": true,
-          "rootStateEntity": true,
-          "stateEntityParamName": null,
-          "defaultStateEntity": null,
-          "rootEntity": null,
-          "direction": "FROM",
-          "maxLevel": 1,
-          "relationType": "Contains",
-          "deviceTypes": [
-            "HVAC"
+          "entityType": "DEVICE",
+          "entityList": [
+            "f5f251e0-e12c-11e9-959e-99d531bec19d",
+            "e62e85d0-e12c-11e9-959e-99d531bec19d",
+            "ec43ab70-e128-11e9-959e-99d531bec19d"
           ]
         }
       },
@@ -11828,7 +11825,8 @@
       "showDashboardExport": false,
       "toolbarAlwaysOpen": true,
       "titleColor": "rgba(0,0,0,0.870588)"
-    }
+    },
+    "description": "Dashboard for the building Gumpens Auto Øst"
   },
-  "name": "Gumpen Gruppen"
+  "name": "Gumpens Auto Øst"
 }
